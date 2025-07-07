@@ -26,12 +26,12 @@ count = Repeat 3 times max
                // Check if OTP validation vas okay
                When otpFeedBack.success is true
                     // The main flow has completed successfully.
-                    it_pzydo = {success:true, data: { userId: credentials.username}}
-                    Finish it_pzydo
+                    it_updnv = {success:true, data: { userId: credentials.username}}
+                    Finish it_updnv
                Otherwise
                     // Closing the main flow with error.
-                    it_fxcae = {success:false, error: "Your error message here"}
-                    Finish it_fxcae
+                    it_vqspd = {success:false, error: "Your error message here"}
+                    Finish it_vqspd
           Otherwise
                // Launch phone number registration subflow.
                phoneRegistration = Trigger org.gluu.agama.register otpService username
@@ -41,14 +41,14 @@ count = Repeat 3 times max
                // Check if OTP validation is okay
                When otpFeedBack.success is true
                     // The main flow has completed successfully.
-                    it_avtun = {success:true, data: { userId: credentials.username}}
-                    Finish it_avtun
+                    it_xftpw = {success:true, data: { userId: credentials.username}}
+                    Finish it_xftpw
                Otherwise
                     // Closing the main flow with error.
-                    it_sedjj = {success:false, error: "The flow has been completed with error."}
-                    Finish it_sedjj
+                    it_akqdv = {success:false, error: "The flow has been completed with error."}
+                    Finish it_akqdv
      // Provide invalid credential error message to user.
      validationResult.errorMessage = "The provided credentials are not valid. Please try again!"
 // Maximum attempts reached. Password validation failed!
-it_xgumk = {success:false, error: "Password validation failed!"}
-Finish it_xgumk
+it_tdpfb = {success:false, error: "Password validation failed!"}
+Finish it_tdpfb
