@@ -11,60 +11,44 @@ otpService = Call org.gluu.agama.sms.OTPService#getInstance conf
 count = Repeat 3 times max
      // Retrieve user credentials from UI.
      credentials = RRF "login.ftlh" validationResult
-     // Log the successfull  used credentials retrieval.
-     Log "@info Log the successfull  used credentials retrieval."
      // Validate provided user credentials.
      validationResult.status = Call otpService validateCreds credentials.username credentials.password
      // If user credentials is valid
      When validationResult.status is true
-          // add entry in log file for successfull login attempt.
-          Log "@info Valid credentials provided for user: " credentials.username
           // Generate and send OTP code to authenticated user.
           maskedPhone = Call otpService sendOTPCode credentials.username
           // Assign username variable.
           username = credentials.username
           // User has a phone number setup
           When maskedPhone is not null
-               // The OTP Code has been send to user.
-               Log "@info OTP generated and send to: " maskedPhone
                // Trigger OTP subflow
                otpFeedBack = Trigger org.gluu.agama.sms.otp otpService username maskedPhone
-               // OTP Code validation is completed.
-               Log "@info OTP Code validation completed with status: " otpFeedBack
                // Check if OTP validation vas okay
                When otpFeedBack.success is true
                     // The main flow has completed successfully.
-                    it_yvepg = {success:true, data: { userId: credentials.username}}
-                    Finish it_yvepg
+                    it_pzydo = {success:true, data: { userId: credentials.username}}
+                    Finish it_pzydo
                Otherwise
                     // Closing the main flow with error.
-                    it_hqmjv = {success:false, error: "Your error message here"}
-                    Finish it_hqmjv
+                    it_fxcae = {success:false, error: "Your error message here"}
+                    Finish it_fxcae
           Otherwise
-               // TP Code validation is completed.
-               Log "@info The following user don't has a phone number : " username
                // Launch phone number registration subflow.
                phoneRegistration = Trigger org.gluu.agama.register otpService username
-               // Log phone registration result
-               Log "@info Phone number registration done"
                maskedPhone = Call otpService sendOTPCode credentials.username
                // Trigger OTP subflow
                otpFeedBack = Trigger org.gluu.agama.sms.otp otpService username maskedPhone
                // Check if OTP validation is okay
                When otpFeedBack.success is true
                     // The main flow has completed successfully.
-                    it_nsaam = {success:true, data: { userId: credentials.username}}
-                    Finish it_nsaam
+                    it_avtun = {success:true, data: { userId: credentials.username}}
+                    Finish it_avtun
                Otherwise
                     // Closing the main flow with error.
-                    it_igzce = {success:false, error: "The flow has been completed with error."}
-                    Finish it_igzce
-     // Invalid credentials provided.
-     Log "@error Invalid credentials provided."
-     // Provide feedback about the error message to user.
+                    it_sedjj = {success:false, error: "The flow has been completed with error."}
+                    Finish it_sedjj
+     // Provide invalid credential error message to user.
      validationResult.errorMessage = "The provided credentials are not valid. Please try again!"
 // Maximum attempts reached. Password validation failed!
-Log "@info Maximum attempts reached. Password validation failed!"
-// Maximum attempts reached. Password validation failed!
-it_ardme = {success:false, error: "Password validation failed!"}
-Finish it_ardme
+it_xgumk = {success:false, error: "Password validation failed!"}
+Finish it_xgumk
