@@ -26,42 +26,15 @@
 			"type": "startNode",
 			"id": "startNode-78d90469-210f-444a-82f4-b5ad36a0d208",
 			"position": {
-				"x": 50,
-				"y": 200
+				"x": -39.506982242777624,
+				"y": -25.38505167157256
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
-		},
-		{
-			"data": {
-				"agamaData": {
-					"nodeIcon": "octicon:log-16",
-					"displayName": "Phone registration",
-					"hasComment": true,
-					"comment": "",
-					"logMessage": "\"start phone number registration flow\"",
-					"logLevel": "info"
-				},
-				"id": "logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5",
-				"type": "logNode",
-				"position": {
-					"x": 300,
-					"y": 200
-				},
-				"previousNodeId": "startNode-78d90469-210f-444a-82f4-b5ad36a0d208"
+				"height": 123
 			},
-			"type": "logNode",
-			"id": "logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5",
-			"position": {
-				"x": 300,
-				"y": 200
-			},
-			"measured": {
-				"width": 170,
-				"height": 124
-			}
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"data": {
@@ -89,18 +62,20 @@
 					"x": 550,
 					"y": 200
 				},
-				"previousNodeId": "logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5"
+				"previousNodeId": "startNode-78d90469-210f-444a-82f4-b5ad36a0d208"
 			},
 			"type": "assignmentNode",
 			"id": "assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933",
 			"position": {
-				"x": 550,
-				"y": 200
+				"x": 245.00173380263055,
+				"y": 47.945969924919964
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
+				"height": 123
+			},
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"data": {
@@ -121,55 +96,27 @@
 			"type": "repeatNode",
 			"id": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e",
 			"position": {
-				"x": 800,
-				"y": 200
+				"x": 525.1968603423629,
+				"y": 122.35538889783146
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
-		},
-		{
-			"data": {
-				"agamaData": {
-					"nodeIcon": "octicon:log-16",
-					"displayName": "Log max attempt reached",
-					"hasComment": true,
-					"comment": "Max number of attemps has been reached.",
-					"logMessage": "\"Max number of attemps has been reached.\"",
-					"logLevel": "info"
-				},
-				"id": "logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f",
-				"type": "logNode",
-				"position": {
-					"x": 1050,
-					"y": 200
-				},
-				"previousNodeId": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e",
-				"branching": "continue"
+				"height": 123
 			},
-			"type": "logNode",
-			"id": "logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f",
-			"position": {
-				"x": 1050,
-				"y": 200
-			},
-			"measured": {
-				"width": 170,
-				"height": 124
-			}
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"data": {
 				"agamaData": {
 					"nodeIcon": "material-symbols:equal",
-					"displayName": "Send error feedback",
+					"displayName": "Send error feedback on max attempts reached",
 					"hasComment": true,
 					"comment": "",
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "Invalid phone number",
+							"assignmentExpression": "\"Invalid phone number\"",
 							"assignedVariableName": "phoneUiFeedback.errorMessage"
 						}
 					]
@@ -180,18 +127,21 @@
 					"x": 1300,
 					"y": 200
 				},
-				"previousNodeId": "logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f"
+				"previousNodeId": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e",
+				"branching": "continue"
 			},
 			"type": "assignmentNode",
 			"id": "assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cba",
 			"position": {
-				"x": 1300,
-				"y": 200
+				"x": 851.7630740681122,
+				"y": 16.67244600876873
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
+				"height": 123
+			},
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"data": {
@@ -218,42 +168,15 @@
 			"type": "rrfNode",
 			"id": "rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588",
 			"position": {
-				"x": 1050,
-				"y": 450
+				"x": 803.235192129257,
+				"y": 327.06269908823316
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
-		},
-		{
-			"data": {
-				"agamaData": {
-					"nodeIcon": "octicon:log-16",
-					"displayName": "Log the phone number",
-					"hasComment": true,
-					"comment": "Log the phone number",
-					"logMessage": "\"Phone number collected:\"  registrationResult.phoneNumber",
-					"logLevel": "info"
-				},
-				"id": "logNode-97741390-45ee-47f0-9257-42df0e142371",
-				"type": "logNode",
-				"position": {
-					"x": 1300,
-					"y": 450
-				},
-				"previousNodeId": "rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588"
+				"height": 123
 			},
-			"type": "logNode",
-			"id": "logNode-97741390-45ee-47f0-9257-42df0e142371",
-			"position": {
-				"x": 1300,
-				"y": 450
-			},
-			"measured": {
-				"width": 170,
-				"height": 124
-			}
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"data": {
@@ -279,18 +202,20 @@
 					"x": 1550,
 					"y": 450
 				},
-				"previousNodeId": "logNode-97741390-45ee-47f0-9257-42df0e142371"
+				"previousNodeId": "rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588"
 			},
 			"type": "callNode",
 			"id": "callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5",
 			"position": {
-				"x": 1550,
-				"y": 450
+				"x": 1126.5662137257498,
+				"y": 397.1585285554686
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
+				"height": 123
+			},
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"data": {
@@ -313,54 +238,18 @@
 			"type": "finishNode",
 			"id": "finishNode-cd30ea8f-4dc3-4e04-9554-296f9eba0019",
 			"position": {
-				"x": 1800,
-				"y": 450
+				"x": 1404.6045455126437,
+				"y": 495.29268980959836
 			},
 			"measured": {
 				"width": 170,
-				"height": 124
-			}
+				"height": 123
+			},
+			"selected": false,
+			"dragging": false
 		}
 	],
 	"edges": [
-		{
-			"id": "startNode-78d90469-210f-444a-82f4-b5ad36a0d208-logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5",
-			"type": "default",
-			"source": "startNode-78d90469-210f-444a-82f4-b5ad36a0d208",
-			"target": "logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_startNode-78d90469-210f-444a-82f4-b5ad36a0d208"
-		},
-		{
-			"id": "logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5-assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933",
-			"type": "default",
-			"source": "logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5",
-			"target": "assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_logNode-7394ecf5-b7e5-4532-b50a-63feb74716c5"
-		},
 		{
 			"id": "assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933-repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e",
 			"type": "default",
@@ -379,44 +268,6 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933"
-		},
-		{
-			"id": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e-logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f",
-			"type": "default",
-			"source": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e",
-			"target": "logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "continue",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e_continue"
-		},
-		{
-			"id": "logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f-assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cba",
-			"type": "default",
-			"source": "logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f",
-			"target": "assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cba",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_logNode-ab662079-48d1-46c5-bdcc-e89e36cfe59f"
 		},
 		{
 			"id": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e-rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588",
@@ -438,44 +289,6 @@
 			"sourceHandle": "source_repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e_repeat"
 		},
 		{
-			"id": "rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588-logNode-97741390-45ee-47f0-9257-42df0e142371",
-			"type": "default",
-			"source": "rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588",
-			"target": "logNode-97741390-45ee-47f0-9257-42df0e142371",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588"
-		},
-		{
-			"id": "logNode-97741390-45ee-47f0-9257-42df0e142371-callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5",
-			"type": "default",
-			"source": "logNode-97741390-45ee-47f0-9257-42df0e142371",
-			"target": "callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_logNode-97741390-45ee-47f0-9257-42df0e142371"
-		},
-		{
 			"id": "callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5-finishNode-cd30ea8f-4dc3-4e04-9554-296f9eba0019",
 			"type": "default",
 			"source": "callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5",
@@ -493,11 +306,65 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5"
+		},
+		{
+			"source": "startNode-78d90469-210f-444a-82f4-b5ad36a0d208",
+			"sourceHandle": "source_startNode-78d90469-210f-444a-82f4-b5ad36a0d208",
+			"target": "assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933",
+			"targetHandle": "target_assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"id": "xy-edge__startNode-78d90469-210f-444a-82f4-b5ad36a0d208source_startNode-78d90469-210f-444a-82f4-b5ad36a0d208-assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933target_assignmentNode-47234883-c18d-4c5e-98af-594cc92b2933"
+		},
+		{
+			"source": "repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e",
+			"sourceHandle": "source_repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e_continue",
+			"target": "assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cba",
+			"targetHandle": "target_assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cba",
+			"label": "continue",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"id": "xy-edge__repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7esource_repeatNode-a1cb4eaa-6b05-4247-92b0-ba263c157a7e_continue-assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cbatarget_assignmentNode-eff07685-7a57-4c13-b828-8a24f6be0cba"
+		},
+		{
+			"source": "rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588",
+			"sourceHandle": "source_rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588",
+			"target": "callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5",
+			"targetHandle": "target_callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"id": "xy-edge__rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588source_rrfNode-6240c554-3ab2-4c91-ad08-dccea794a588-callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5target_callNode-7bc57c5d-732b-4283-a004-ba73e2b089b5"
 		}
 	],
 	"viewport": {
-		"x": 0,
-		"y": 0,
-		"zoom": 1
+		"x": -401.25134402013987,
+		"y": -33.207477354477874,
+		"zoom": 0.9273019592468422
 	}
 }
