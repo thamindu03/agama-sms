@@ -84,7 +84,7 @@
 				"width": 170,
 				"height": 123
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -340,7 +340,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "Error occurs while sending new code to you. Please contact site administrator.",
+							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
 							"assignedVariableName": "otpUiFeedback.infoMessage"
 						}
 					]
@@ -364,7 +364,7 @@
 				"width": 170,
 				"height": 123
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -754,8 +754,8 @@
 		}
 	],
 	"viewport": {
-		"x": 272.4669950838688,
-		"y": 145.63338475757183,
-		"zoom": 0.5586435706773764
+		"x": -1230.7888055238104,
+		"y": -214.19123363120377,
+		"zoom": 0.9726549645579137
 	}
 }
