@@ -24,7 +24,7 @@ y = Repeat 3 times max
      resendHasSucceed = Call otpService sendOTPCode username
      When resendHasSucceed is null
           // Provide feedback about the otp resend error to user.
-          otpUiFeedback.infoMessage = Error occurs while sending new code to you. Please contact site administrator.
+          otpUiFeedback.infoMessage = "Error occurs while sending new code to you. Please contact site administrator."
      // Provide feedback about the code resend to user.
      otpUiFeedback.infoMessage = "A new OTP code has been send to you on your mobile phone."
 // OTP validation has failed.
