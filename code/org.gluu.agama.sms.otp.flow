@@ -11,21 +11,13 @@ otpUiFeedback.infoMessage = "An OTP code has been send to you on your mobile pho
 y = Repeat 3 times max
      // Show UI to collect OTP code from user.
      otpCreds = RRF "otp.ftlh" otpUiFeedback
-     When otpCreds.hasRequestedNewCode is not "yes"
-          // Validate the OTP code provided by the user.
-          otpValidationResult = Call otpService validateOTPCode username otpCreds.code
-          // If otp validation was successful
-          When otpValidationResult is true
-               // OTP flow completed successfully.
-               Finish otpValidationResult
-          // Provide feedback to user on invalid code
-          otpUiFeedback.errorMessage = "The provided code is not valid."
-     // Resend OTP code to user
-     resendHasSucceed = Call otpService sendOTPCode username
-     When resendHasSucceed is null
-          // Provide feedback about the otp resend error to user.
-          otpUiFeedback.infoMessage = "Error occurs while sending new code to you. Please contact site administrator."
-     // Provide feedback about the code resend to user.
-     otpUiFeedback.infoMessage = "A new OTP code has been send to you on your mobile phone."
+     // Validate the OTP code provided by the user.
+     otpValidationResult = Call otpService validateOTPCode username otpCreds.code
+     // If otp validation was successful
+     When otpValidationResult is true
+          // OTP flow completed successfully.
+          Finish otpValidationResult
+     // Provide feedback to user on invalid code
+     otpUiFeedback.errorMessage = "The provided code is not valid."
 // OTP validation has failed.
 Finish otpValidationResult
